@@ -266,7 +266,7 @@ generate.biclust.model<- function(dataset,parameters){
   #feature <- dataset$features
   dataset$features<- as.data.frame(matrix(0,dim(clust.descr)[2],2))
   colnames(dataset$features)<- c('name','uri')
-  dataset$features$name <- colnames(clust.descr)
+  dataset$features$uri <- colnames(clust.descr)
 
   #	for(i in 1:dim(clust.descr)[1]){
   #		w1<- data.frame(t(clust.descr[i,]))
@@ -279,7 +279,8 @@ generate.biclust.model<- function(dataset,parameters){
   #	p7.2<- list(predictions=p7.1)
 
   #return(p7.2)#as.data.frame(clust.descr))
-  return(dataset)#as.data.frame(clust.descr))
+  responseDataset <- list(responseDataset=dataset)
+  return(responseDataset)#as.data.frame(clust.descr))
 }
 
 #try1<- generate.biclust.model(datBIO$dataset,datBIO$parameters)
@@ -478,7 +479,7 @@ generate.hierar.model<- function(dataset,parameters){
   #feature <- dataset$features
   dataset$features<- as.data.frame(matrix(0,dim(clust.descr)[2],2))
   colnames(dataset$features)<- c('name','uri')
-  dataset$features$name <- colnames(clust.descr)
+  dataset$features$uri <- colnames(clust.descr)
 
   #	for(i in 1:dim(clust.descr)[1]){
   #		w1<- data.frame(t(clust.descr[i,]))
@@ -491,7 +492,8 @@ generate.hierar.model<- function(dataset,parameters){
   #	p7.2<- list(predictions=p7.1)
 
   #return(p7.2)#as.data.frame(clust.descr))
-  return(dataset)#as.data.frame(clust.descr))
+  responseDataset <- list(responseDataset=dataset)
+  return(responseDataset)#as.data.frame(clust.descr))
 
 }
 #generate.hierar.model(dat4$dataset,dat4$predictionFeature,dat4$parameters)
